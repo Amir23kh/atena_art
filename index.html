@@ -1,0 +1,774 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+ 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> آموزش نقاشی آتنا اسماعیلی </title>
+<link rel="stylesheet" href="./assets/tailwind.css">
+    <!-- Font Awesome CDN -->
+     <link rel="stylesheet" href="./assets/all.min.css">
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    /> -->
+    
+
+    <style>
+  @font-face {
+  font-family: "Vazirmatn";
+  src: 
+    url("./fonts/webfonts/Vazirmatn-Regular.woff2") format("woff2"),
+    url("./fonts/ttf/Vazirmatn-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+   html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Vazirmatn", sans-serif;
+}
+    
+      .counter-list {
+  counter-reset: item;
+}
+
+.counter-list li {
+  counter-increment: item;
+  position: relative;
+  padding-right: 25px;
+}
+
+.counter-list li::before {
+  content: counter(item) ")";
+  position: absolute;
+  right: 0;
+  color: #334155;
+  font-weight: bold;
+}
+.hero {
+  position: relative;
+  height: 260px;
+  /* background: linear-gradient(
+    35deg,
+    #2563eb 10%,
+    #4f46e5 35%,
+    #7c3aed 65%,
+    #6d28d9 100%
+  ); */
+  background: #bb00ff;
+background: linear-gradient(264deg, rgba(187, 0, 255, 1) 0%, rgba(255, 48, 200, 1) 30%, rgba(237, 221, 83, 1) 100%);
+  overflow: hidden;
+}
+.location-class {
+  /* background: linear-gradient(20deg, #2563eb, #4f46e5, #7c3aed, #6d28d9); */
+  background: #bb00ff;
+background: linear-gradient(264deg, rgba(187, 0, 255, 1) 0%, rgba(255, 48, 200, 1) 30%, rgba(237, 221, 83, 1) 100%);
+}
+
+/* برش مورب پایین */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: white;
+  clip-path: polygon(0 35%, 100% 0, 100% 100%, 0 100%);
+}
+
+/* دایره وسط */
+.profile-wrapper {
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.profile {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: white;
+  padding: 2px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.button_color {
+/* background: #bb00ff;
+background: linear-gradient(264deg, rgba(187, 0, 255, 1) 0%, rgba(255, 48, 200, 1) 30%, rgba(237, 221, 83, 1) 100%); */
+background: #61276b;
+background: linear-gradient(90deg, rgba(97, 39, 107, 1) 35%, rgba(247, 0, 255, 1) 100%);
+}
+.text-color{
+  color: #EC4899;
+  font-weight: bold;
+}
+    </style>
+
+ 
+  </head>
+
+  <body class="bg-gray-100 text-slate-800 ">
+   
+  <!-- Page -->
+    <main class="mx-auto max-w-md min-h-screen pb-28">
+      <!-- Header area -->
+        <section class="hero">
+
+    <div class="profile-wrapper">
+      <div class="profile">
+        <img src="./images/profile.jpg" alt="" />
+      </div>
+    </div>
+
+  </section>
+
+      <!-- Name / tag -->
+      <section class="px-4 pt-10 text-center">
+        <h1 class="mt-6 text-3xl font-bold text-slate-700">آتنا اسماعیلی</h1>
+        <div class="mt-4 flex items-center justify-center">
+      
+        </div> 
+
+        <!-- Buttons -->
+  <div class="mt-6 flex items-center justify-center gap-3">
+  <!-- Start route -->
+  <button
+    type="button"
+    onclick="openMapChooser()"
+    class="flex w-44 h-14 items-center justify-center gap-2 rounded-lg location-class px-4 font-bold text-white shadow-sm active:scale-[0.99]"
+  >
+    <i class="fa-solid fa-location-dot"></i>
+    شروع مسیریابی
+  </button>
+
+  <!-- Share -->
+  <button
+    id="shareBtn"
+    class="flex w-44 h-14 items-center justify-center gap-2 rounded-lg border-2 border-purple-600 bg-white px-4 font-bold text-purple-600 shadow-sm active:scale-[0.99]"
+    type="button"
+  >
+    <i class="fa-solid fa-share-nodes"></i>
+    اشتراک‌گذاری
+  </button>
+</div>
+
+        <hr class="mt-6 border-gray-200" />
+      </section>
+
+      <!-- Contact list -->
+      <section id="contact" class="px-4 pt-5">
+        <div class="space-y-4">
+          <!-- item -->
+          <a
+            href="tel:+989201663024"
+            class="group flex items-center gap-4 rounded-2xl bg-gray-100/80 p-4 shadow-sm hover:bg-gray-100"
+          >
+            <div
+              class="flex h-14 w-14 items-center justify-center rounded-full bg-sky-500 text-white"
+            >
+              <i class="fa-solid fa-mobile-screen-button text-2xl"></i>
+            </div>
+            <div class="flex-1">
+              <div class="text-sm font-bold text-gray-500">شماره تماس</div>
+              <div class="mt-1 text-xl font-bold tracking-wide text-slate-700">
+                09201663024
+              </div>
+            </div>
+            <i
+              class="fa-solid fa-chevron-left text-gray-300 group-hover:text-gray-400"
+            ></i>
+          </a>
+
+          <a
+            href="https://t.me/atena_art6"
+            target="_blank"
+            class="group flex items-center gap-4 rounded-2xl bg-gray-100/80 p-4 shadow-sm hover:bg-gray-100"
+          >
+            <div
+              class="flex h-14 w-14 items-center justify-center rounded-full bg-sky-600 text-white"
+            >
+            <i class="fa-brands fa-telegram text-2xl"></i>
+            </div>
+            <div class="flex-1">
+              <div class="text-sm font-bold text-gray-500">آی دی تلگرام</div>
+              <div class="mt-1 text-xl font-bold text-slate-700">
+                atena_art6@
+              </div>
+            </div>
+            <i
+              class="fa-solid fa-chevron-left text-gray-300 group-hover:text-gray-400"
+            ></i>
+          </a>
+    <a
+  href="https://wa.me/989201663024"
+  target="_blank"
+  class="group flex items-center gap-4 rounded-2xl bg-gray-100/80 p-4 shadow-sm hover:bg-gray-100"
+>
+  <div
+    class="flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white"
+  >
+  <i class="fa-brands fa-whatsapp text-2xl"></i>
+  </div>
+  <div class="flex-1">
+    <div class="text-sm font-bold text-gray-500">واتساپ</div>
+    <div class="mt-1 text-xl font-bold text-slate-700">
+      09201663024
+    </div>
+  </div>
+  <i
+    class="fa-solid fa-chevron-left text-gray-300 group-hover:text-gray-400"
+  ></i>
+</a>
+
+          <a
+            href="https://instagram.com/attena_artt"
+            target="_blank"
+            class="group flex items-center gap-4 rounded-2xl bg-gray-100/80 p-4 shadow-sm hover:bg-gray-100"
+          >
+            <div
+              class="flex h-14 w-14 items-center justify-center rounded-full bg-pink-500 text-white"
+            >
+            <i class="fa-brands fa-instagram text-2xl"></i>
+            </div>
+            <div class="flex-1">
+              <div class="text-sm font-bold text-gray-500">پیج اینستاگرام</div>
+              <div class="mt-1 text-xl font-bold text-slate-700">
+                attena_artt
+              </div>
+              <p class="mt-8 text-color">جهت مشاهده نمونه کارهای هنرجویان <br> لطفاً به صفحه اینستاگرام مراجعه کنید.</p>
+            </div>
+            <i
+              class="fa-solid fa-chevron-left text-gray-300 group-hover:text-gray-400"
+            ></i>
+          </a>
+         
+        </div>
+      </section>
+
+      
+      <!-- About / content (second screenshot) -->
+      <section class="px-4 pt-10">
+  <div class="rounded-2xl bg-white p-6 shadow-soft">
+
+    <div class="flex items-center justify-center">
+      <span class="rounded-full bg-white px-5 py-2 text-sm font-bold text-slate-600 shadow-sm">
+        معرفی من
+      </span>
+    </div>
+
+    <!-- Paragraph 1 -->
+    <p class="mt-6 flex items-start gap-3 leading-9 text-slate-600">
+      <i class="fa-solid fa-check text-green-500 mt-2"></i>
+      <span>
+      هنرمند ، مدرس نقاشی و خطاطی کودکان ، بزرگسالان  مدرس موسیقی کودک در شهرستان بابل 
+      </span>
+    </p>
+
+    <!-- Paragraph 2 -->
+    <p class="mt-5 flex items-start gap-3 leading-9 text-slate-600">
+      <i class="fa-solid fa-check text-green-500 mt-2"></i>
+      <span>
+        دارای مدرک کارشناسی
+      </span>
+    </p>
+
+    
+
+    <!-- Paragraph 3 -->
+    <p class="mt-5 flex items-start gap-3 leading-9 text-slate-600">
+      <i class="fa-solid fa-check text-green-500 mt-2"></i>
+      <span>
+       دارای مدرک سرتیفیکیت های معتبر از نمایشگاه های بین المللی داخلی و خارجی
+      </span>
+    </p>
+<!-- 
+    <div class="mt-8">
+      <div class="text-lg font-bold text-slate-700">ویژگی‌ها:</div> -->
+
+      <ul class="mt-4 space-y-4 text-slate-600">
+
+        <li class="flex items-start gap-3">
+          <i class="fa-solid fa-check text-green-500 mt-1"></i>
+          <span>دارای مدرک رسمی از انجمن خوشنویسان ایران  </span>
+        </li>
+
+        <li class="flex items-start gap-3">
+          <i class="fa-solid fa-check text-green-500 mt-1"></i>
+          <span>دارای مدرک رسمی مربیگری موسیقی کودک   </span>
+        </li>
+
+        <li class="flex items-start gap-3">
+          <i class="fa-solid fa-check text-green-500 mt-1"></i>
+          <span>شرکت و ارائه اثار در انواع نمایشگاه های داخلی و خارجی   </span>
+        </li>
+         <li class="flex items-start gap-3">
+          <i class="fa-solid fa-check text-green-500 mt-1"></i>
+          <span>  برگزاری اولین نمایشگاه نقاشی برای هنرجویان  کودک و بزرگسال با عنوان (تلاش من) بامجوز رسمی اداره فرهنگ و ارشاد شهرستان بابل</span>
+        </li>
+           <li class="flex items-start gap-3">
+          <i class="fa-solid fa-check text-green-500 mt-1"></i>
+          <span>   برگزاری اولین نمایشگاه اثار آتنا اسماعیلی با تکنیک جدید دیجیتال ارت و میکس مدیا در شهرستان بابل</span>
+        </li>
+        
+        <li class="flex items-start gap-3">
+          <i class="fa-solid fa-check text-green-500 mt-1"></i>
+          <span>برگزاری انواع ورکشاپ های تخصصی کودکان</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+  <section class="px-4 pt-10">
+  <div class="rounded-2xl bg-white p-6 shadow-soft">
+
+    <div class="flex items-center justify-center">
+      <span class="rounded-full bg-white px-5 py-2 text-sm font-bold text-slate-600 shadow-sm">
+        فلسفه اموزشی من
+      </span>
+    </div>
+    <!-- Paragraph 1 -->
+    <p class="mt-6 flex items-start gap-3 leading-9 text-slate-600">
+      <span>
+        با سال ها فعالیت در حوزه آموزش هنر ، همواره تلاش کردم آموزش را بر پایه اصول اکادمیک تجربه عملی و پرورش خلاقیت فردی هنرجویان ارائه دهم ،در کلاس، من فضایی صمیمی ، حرفه ای و انگیزه بخش ایجاد میکنم تا هر هنرجو بتواند با اعتماد به نفس مسیر هنری خود را پیدا کند
+      </span>
+    </p>
+  </div>
+</section>
+<section class="px-4 pt-10">
+  <div class="rounded-2xl bg-white p-6 shadow-soft">
+
+    <div class="flex items-center justify-center mb-6">
+      <span class="rounded-full bg-white px-5 py-2 text-sm font-bold text-slate-600 shadow-sm">
+        حوزه های آموزشی من
+      </span>
+    </div>
+
+    <ol class="space-y-2 pr-6 text-slate-700 list-none counter-list">
+       <li> <!-- Paragraph 1 -->
+    <p class="mt-6 flex items-start gap-3 leading-9 text-slate-600">
+      <span>
+    آموزش نقاشی کودکان و نوجوانان همراه با کاردستی و پرورش خلاقیت
+      </span>
+    </p> </li>
+           <li> <!-- Paragraph 2 -->
+    <p class="mt-6 flex items-start gap-3 leading-9 text-slate-600">
+      <span> آموزش نقاشی بزرگسالان (از مبتدی تا پیشرفته) 
+      </span>
+    </p> </li>
+<li> <!-- Paragraph 3 -->
+    <p class="mt-6 flex items-start gap-3 leading-9 text-slate-600">
+      <span>  کلاس های نقاشی و موسیقی برای کودکان
+      </span>
+    </p> </li>
+ <li> <!-- Paragraph 4 -->
+    <p class="mt-6 flex items-start gap-3 leading-9 text-slate-600">
+      <span>  کلاس های مادر و کودک
+      </span>
+    </p> </li>
+  <li> <!-- Paragraph 5 -->
+    <p class="mt-6 flex items-start gap-3 leading-9 text-slate-600">
+      <span>    کلاس های خوش نویسی برای کودکان و بزرگسالان
+      </span>
+    </p> </li>
+    <li> <!-- Paragraph 6 -->
+    <p class="mt-6 flex items-start gap-3 leading-9 text-slate-600">
+      <span>    آموزش کالیگرافی از مبتدی تا پیشرفته برای بزرگسالان
+      </span>
+    </p> </li>
+   <li> <!-- Paragraph 7 -->
+    <p class="mt-6 flex items-start gap-3 leading-9 text-slate-600">
+      <span>    آموزش انواع تابلو های دکوراتیو و مدرن و پتینه کاری
+      </span>
+    </p> </li>
+  <li> <!-- Paragraph 8 -->
+    <p class="mt-6 flex items-start gap-3 leading-9 text-slate-600">
+      <span>    کلاس های رنگ روغن برای بزرگسالان
+      </span>
+    </p> </li>
+     <li> <!-- Paragraph 9 -->
+    <p class="mt-6 flex items-start gap-3 leading-9 text-slate-600">
+      <span>    آموزش نقاشی روی لباس ، پارچه ، آینه  و ....
+      </span>
+    </p> </li>
+   <li> <!-- Paragraph 9 -->
+    <p class="mt-6 flex items-start gap-3 leading-9 text-slate-600">
+      <span>    برگزاری کلاس های کالیگرافی و خوشنویسی به صورت آنلاین و آفلاین  
+      </span>
+    </p> </li>
+    </ol>
+
+  </div>
+</section>
+<section class="px-4 pt-12">
+  <div class="max-w-5xl mx-auto">
+
+    <h2 class="text-center text-2xl font-bold text-slate-700 mb-8">
+      نمونه کارهای من   
+    </h2>
+
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Card -->
+      <div class="cursor-pointer" onclick="openModal(this)">
+        <img src="./images/aks 3.jpeg"
+             class="rounded-2xl shadow-lg w-full  object-cover hover:scale-105 transition duration-300">
+      </div>
+
+      <div class="cursor-pointer" onclick="openModal(this)">
+        <img src="./images/aks 1.jpeg"
+             class="rounded-2xl shadow-lg w-full  object-cover hover:scale-105 transition duration-300">
+      </div>
+
+      <div class="cursor-pointer" onclick="openModal(this)">
+        <img src="./images/aks 2.jpeg"
+             class="rounded-2xl shadow-lg w-full  object-cover hover:scale-105 transition duration-300">
+      </div>
+      
+
+    </div>
+  </div>
+</section>
+<!-- Modal -->
+<div id="imageModal" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+
+  <!-- Close Button -->
+  <button onclick="closeModal()"
+          class="absolute top-6 right-6 text-white text-3xl">
+    &times;
+  </button>
+
+  <!-- Image -->
+  <img id="modalImage"
+       class="max-h-[85vh] max-w-[90vw] rounded-xl shadow-2xl">
+</div>
+  <section class="px-4 pt-10">
+  <div class="rounded-2xl bg-white p-6 shadow-soft">
+    <div class="flex items-center justify-start">
+      <span class="rounded-full bg-white px-5 py-2 text-sm font-bold text-slate-600 shadow-sm">
+        چرا این کلاس ها؟ 
+      </span>
+    </div>
+      <ul class="mt-4 space-y-4 text-slate-600">
+
+        <li class="flex items-start gap-3">
+          <i class="fa-solid fa-check text-green-500 mt-1"></i>
+          <span>آموزش اصولی و مرحله به مرحله</span>
+        </li>
+
+        <li class="flex items-start gap-3">
+          <i class="fa-solid fa-check text-green-500 mt-1"></i>
+          <span> توجه به پیشرفت فردی هنرجو  </span>
+        </li>
+
+        <li class="flex items-start gap-3">
+          <i class="fa-solid fa-check text-green-500 mt-1"></i>
+          <span> فضا حرفه ای و صمیمی</span>
+        </li>
+         <li class="flex items-start gap-3">
+          <i class="fa-solid fa-check text-green-500 mt-1"></i>
+          <span> امکان رشد خلاقیت در کنار یادگیری تکنیک</span>
+        </li>
+           <li class="flex items-start gap-3">
+          <i class="fa-solid fa-check text-green-500 mt-1"></i>
+          <span>  یادگیری انواع تکنیک های جدید و آشنایی با متریال جدید</span>
+        </li>
+        
+        <li class="flex items-start gap-3">
+          <i class="fa-solid fa-check text-green-500 mt-1"></i>
+          <span>برگزاری انواع ورکشاپ های تخصصی کودکان</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+<section class="px-4 pt-10">
+  <div class="rounded-2xl bg-white p-6 shadow-soft">
+    
+    <div class="flex items-center justify-start">
+      <span class="rounded-full bg-white px-5 py-2 text-sm font-bold text-slate-600 shadow-sm">
+        شروع مسیر هنری شما :
+      </span>
+    </div>
+
+    <p class="mt-6 leading-9 text-slate-600">
+      هنر یک مهارت ساده نیست، مسیری برای کشف توانایی های درونی شماست.
+      اگر آماده اید قدم در این مسیر بگذارید، همین حالا برای ثبت نام و اطلاعات بیشتر
+      از طریق شماره تماس و یا شبکه های مجازی اقدام نمایید.
+    </p>
+
+    <!-- Center Button -->
+    <div class="mt-8 flex justify-center">
+      <a href="#contact"
+         class="relative inline-flex items-center gap-2 rounded-full bg-red-500  location-class  px-6 py-3 text-sm font-bold text-white shadow-lg transition ">
+
+        <!-- Pulse Ring -->
+        <span class="absolute inline-flex h-full w-full rounded-full "></span>
+
+        <span class="relative flex items-center gap-2">
+          <i class="fa-solid fa-arrow-up"></i>
+         راه های ارتباطی
+        </span>
+
+      </a>
+    </div>
+
+  </div>
+</section>
+    </main> 
+
+    <!-- Bottom bar (like screenshot) -->
+    <nav
+      class="fixed bottom-0 left-0 right-0 z-50 location-class backdrop-blur border-t border-blue-100"
+    >
+      <div class="mx-auto max-w-md relative">
+        <div
+          class="grid grid-cols-2 px-6 py-3 text-sm font-bold text-slate-700"
+        >
+          <!-- Start route -->
+<button
+  type="button"
+  onclick="openMapChooser()"
+  class="flex items-center justify-start gap-2 text-white"
+>
+  <i class="fa-solid fa-location-dot text-white"></i>
+  شروع مسیریابی
+</button>
+        <button
+  type="button"
+  onclick="downloadVCard()"
+  class="flex items-center justify-end gap-2 text-white"
+>
+  <i class="fa-solid fa-user-plus text-white"></i>
+  افزودن به مخاطبین
+</button>
+        </div>
+
+        <!-- Floating call button -->
+        <a
+          href="tel:+989201663024"
+          class="absolute left-1/2 -translate-x-1/2 -top-7 flex h-14 w-14 items-center justify-center rounded-full button_color text-white shadow-soft"
+          aria-label="call"
+        >
+          <i class="fa-solid fa-phone text-xl"></i>
+        </a>
+      </div>
+    </nav>
+<!-- Map Chooser Modal -->
+<div
+  id="mapChooser"
+  class="fixed inset-0 z-50 hidden items-end justify-center bg-black/60 p-4"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="mapChooserTitle"
+>
+  <div class="w-full max-w-md rounded-2xl bg-white p-4 shadow-soft">
+    <div class="flex items-center justify-between">
+      <div id="mapChooserTitle" class="text-base font-bold text-slate-700">
+        انتخاب برنامه مسیریابی
+      </div>
+      <button
+        type="button"
+        onclick="closeMapChooser()"
+        class="text-2xl leading-none text-slate-500"
+        aria-label="close"
+      >
+        &times;
+      </button>
+    </div>
+
+    <div class="mt-4 grid grid-cols-2 gap-3 text-sm font-bold">
+      <a id="mapNeshan" target="_blank" rel="noopener noreferrer"
+         class="flex items-center justify-center rounded-xl border p-3 text-slate-700">
+        نشان
+      </a>
+
+      <a id="mapBalad" target="_blank" rel="noopener noreferrer"
+         class="flex items-center justify-center rounded-xl border p-3 text-slate-700">
+        بلد
+      </a>
+
+      <a id="mapGoogle" target="_blank" rel="noopener noreferrer"
+         class="flex items-center justify-center rounded-xl border p-3 text-slate-700">
+        گوگل‌مپ
+      </a>
+
+      <a id="mapApple" target="_blank" rel="noopener noreferrer"
+         class="flex items-center justify-center rounded-xl border p-3 text-slate-700">
+        اپل‌مپ
+      </a>
+    </div>
+
+    <div class="mt-4">
+      <button
+        type="button"
+        onclick="closeMapChooser()"
+        class="w-full rounded-xl bg-slate-100 p-3 text-sm font-bold text-slate-700"
+      >
+        بستن
+      </button>
+    </div>
+  </div>
+</div>
+    <!-- Share (optional, small JS) -->
+    <script>
+  const shareBtn = document.getElementById("shareBtn");
+
+  shareBtn?.addEventListener("click", async () => {
+    const shareData = {
+      title: "آموزش نقاشی آتنا اسماعیلی",
+      text: "مشاهده کارت معرفی:",
+      url: window.location.href,
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        console.log("اشتراک‌گذاری لغو شد");
+      }
+    } else {
+      alert("مرورگر شما از اشتراک‌گذاری مستقیم پشتیبانی نمی‌کند.");
+    }
+  });
+   function openModal(element) {
+    const img = element.querySelector("img");
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+
+    modalImg.src = img.src;
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+  }
+
+  function closeModal() {
+    const modal = document.getElementById("imageModal");
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+  }
+
+  // Close with ESC
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      closeModal();
+    }
+  });
+
+  // Close when clicking outside image
+  document.getElementById("imageModal").addEventListener("click", function (e) {
+    if (e.target.id === "imageModal") {
+      closeModal();
+    }
+  });
+  // ===== Map Chooser =====
+const DEST_LAT = "36.54268445775079";
+const DEST_LNG = "52.67509248026559";
+
+function buildMapLinks() {
+  const google = `https://www.google.com/maps/dir/?api=1&destination=${DEST_LAT},${DEST_LNG}`;
+  const apple = `https://maps.apple.com/?daddr=${DEST_LAT},${DEST_LNG}`;
+
+  const neshan = `https://neshan.org/maps?destination=${DEST_LAT},${DEST_LNG}`;
+  const balad = `https://balad.ir/direction?destination=${DEST_LAT},${DEST_LNG}`;
+
+  const aNeshan = document.getElementById("mapNeshan");
+  const aBalad = document.getElementById("mapBalad");
+  const aGoogle = document.getElementById("mapGoogle");
+  const aApple = document.getElementById("mapApple");
+
+  if (aNeshan) aNeshan.href = neshan;
+  if (aBalad) aBalad.href = balad;
+  if (aGoogle) aGoogle.href = google;
+  if (aApple) aApple.href = apple;
+}
+
+function openMapChooser() {
+  buildMapLinks();
+  const modal = document.getElementById("mapChooser");
+  modal?.classList.remove("hidden");
+  modal?.classList.add("flex");
+}
+
+function closeMapChooser() {
+  const modal = document.getElementById("mapChooser");
+  modal?.classList.add("hidden");
+  modal?.classList.remove("flex");
+}
+
+// close by clicking outside
+document.addEventListener("click", (e) => {
+  const modal = document.getElementById("mapChooser");
+  if (!modal) return;
+  if (!modal.classList.contains("flex")) return;
+  if (e.target === modal) closeMapChooser();
+});
+
+// close with ESC
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeMapChooser();
+});
+function downloadVCard() {
+  // اطلاعات مخاطب
+  const fullName = "آتنا اسماعیلی";
+  const phone1 = "+989201663024"; // شماره اصلی
+  const instagram = "https://instagram.com/attena_artt";
+  const telegram = "https://t.me/atena_art6";
+  const whatsapp = "https://wa.me/989201663024";
+
+  // vCard 3.0 (سازگار با اکثر گوشی‌ها)
+  const vcf =
+`BEGIN:VCARD
+VERSION:3.0
+N:اسماعیلی;آتنا;;;
+FN:${fullName}
+TEL;TYPE=CELL:${phone1}
+URL;TYPE=Instagram:${instagram}
+URL;TYPE=Telegram:${telegram}
+URL;TYPE=WhatsApp:${whatsapp}
+END:VCARD`;
+
+  const blob = new Blob([vcf], { type: "text/vcard;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "atena-esmaeili.vcf";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+
+  URL.revokeObjectURL(url);
+}
+</script>
+    <!-- Tailwind CDN -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+       <script>
+      // Tailwind config (optional)
+      tailwind.config = {
+        theme: {
+          extend: {
+            boxShadow: {
+              soft: "0 10px 30px rgba(0,0,0,0.08)",
+            }
+          }
+        }
+      }
+     
+
+    </script>
+  </body>
+</html>
